@@ -1,9 +1,135 @@
 ﻿// Test.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 #include <iostream>     // iostream의 기능을 쓰겠다.
+#include "Test.h"
 //using namespace std;
 
 int main() 
+{
+    // Day01();
+
+    // Day02
+    // 산술연산자 : + - * /
+    int a = 10;         // a라는 이름을 가진, int 타입의 변수를 만들고, 10이라는 값을 넣어라
+    int b = 3;          // b라는 이름을 가진, int 타입의 변수를 만들고, 3이라는 값을 넣어라
+
+    int c = a + b;      // c라는 이름을 가진, int 타입의 변수를 만들고, a와 b를 더한 값을 넣아라.
+
+    std::cout << "a는 " << a << ", b는 " << b << ", c는 " << c << std::endl;
+
+    //int d;
+    //std::cout << "d는 " << d;    // 초기화 하지 않고 사용할 경우 쓰레기 값이 들어간다. 그래서 초기화해서 사용해야 한다.
+
+    c = a - b;
+    std::cout << "a는 " << a << ", b는 " << b << ", c는 " << c << std::endl;
+
+    c = a * b;
+    std::cout << "a는 " << a << ", b는 " << b << ", c는 " << c << std::endl;
+
+    c = a / b;
+    std::cout << "a는 " << a << ", b는 " << b << ", c는 " << c << std::endl;
+
+    // 실습 : + - * /를 이용해서 a를 b로 나누었을 때의 나머지를 계산해보기.
+    c = a - (a / b) * b;
+    std::cout << "a는 " << a << ", b는 " << b << ", c는 " << c << std::endl;
+
+    c = a % b;  // 나머지(modulo) 연산자
+    std::cout << "a는 " << a << ", b는 " << b << ", c는 " << c << std::endl;
+
+    a = 10;
+    std::cout << "a = " << a << " (a=10이 나와야 한다.)" << std::endl;
+    a = a + 1;
+    std::cout << "a = " << a << " (a=11이 나와야 한다.)" << std::endl;
+    a += 3; // a = a + 3;와 같음
+    std::cout << "a = " << a << " (a=14이 나와야 한다.)" << std::endl;
+    a++;
+    std::cout << "a = " << a << " (a=15이 나와야 한다.)" << std::endl;
+    ++a;
+    std::cout << "a = " << a << " (a=16이 나와야 한다.)" << std::endl;
+    std::cout << "a = " << a++ << " (a=16이 나와야 한다.)" << std::endl;  // 값을 먼저 확인하고 증가
+    std::cout << "a = " << ++a << " (a=18이 나와야 한다.)" << std::endl;  // 값이 증가되고 확인
+    std::cout << "a = " << a << " (a=18이 나와야 한다.)" << std::endl;
+
+    int b2 = 10;
+    b2 -= 3;
+
+    float c2 = 10.0f;
+    c2++;
+    std::cout << c2 << std::endl;
+
+    // 비교 연산자 
+    // == : 같다
+    // != : 다르다.
+    // > : 크다
+    // < : 작다
+    // >= : 크거나 같다.
+    // <= : 작거나 같다.
+
+    a = b;  // = 는 대입 연산자. 연산자의 오른쪽에 있는 값을 왼쪽 변수에 넣어라
+    a == b; // == 는 비교 연산자. 연산자의 오른쪽과 왼쪽이 같으면 true, 아니면 false
+
+    a = 10;
+    b = 20;
+    bool d = (a == b);
+    std::cout << "a = " << a << ", b = " << b << ", a == b는 " << d << "(결과는 false다.)" << std::endl;
+
+    a = 10;
+    b = 10;
+    d = (a == b);
+    std::cout << "a = " << a << ", b = " << b << ", a == b는 " << d << "(결과는 true다.)" << std::endl;
+
+    d = (a != b);
+    std::cout << "a = " << a << ", b = " << b << ", a == b는 " << d << "(결과는 false다.)" << std::endl;
+
+    a = 15;
+    b = 5;
+    d = (a > b);
+    std::cout << "a = " << a << ", b = " << b << ", a == b는 " << d << "(결과는 true다.)" << std::endl;
+
+    // 논리 연산자 : 결과는 true아니면 false
+    // && : and. 그리고. ~이고 ~다. 논리곱. && 양쪽에 있는 것이 모두 true일때만 true.
+    // || : or. 또는. ~이거나 ~다. 논리합. || 양쪽에 있는 것이 하나라도 true면 true.
+    // ! : not. 반대. true는 false로, false는 true로
+    bool aaa = true;
+    bool bbb = false;
+    bool ccc;
+
+    ccc = aaa && bbb;   // false
+    ccc = aaa || bbb;   // true
+
+    ccc = !aaa && bbb;  // false && false, false
+    ccc = !aaa && !bbb; // false && true, false
+    ccc = aaa || !bbb;  // true || true, true
+
+    // 비트 연산자
+    // &    : and. 둘 다 1일때만 1이다.
+    // |    : or. 둘 중 하나가 1이면 1이다.
+    // ^    : xor. 두개가 다르면 1.
+    // ~    : not. 0은 1로, 1은 0으로
+    // <<   : left shift. 왼쪽에 있는 비트를 오른쪽 수만큼 밀기
+    // >>   : right shift.
+
+    a = 1;  // 0001
+    b = 3;  // 0011
+    std::cout << std::bitset<4>(a) << std::endl;
+    std::cout << std::bitset<4>(b) << std::endl;
+    std::cout << std::bitset<4>(a & b) << " (0001가 나와야 한다.)" << std::endl;
+    std::cout << std::bitset<4>(a | b) << " (0011가 나와야 한다.)" << std::endl;
+    std::cout << std::bitset<4>(a ^ b) << " (0010가 나와야 한다.)" << std::endl;
+    std::cout << std::bitset<4>(~b) << " (1100가 나와야 한다.)" << std::endl;
+    c = a << 2;
+    std::cout << std::bitset<4>(c) << " (0100가 나와야 한다.)" << std::endl;
+    c = b >> 1;
+    std::cout << std::bitset<4>(c) << " (0001가 나와야 한다.)" << std::endl;
+
+    // 실습
+    // int a; 에 3번째 비트가 1인지 확인해서 bool d;에 1이면 true 아니면 false를 넣는 코드 작성하기
+    a = 6; // d = true;
+    a = 8; // d = false;
+
+}
+
+void Day01()
 {
     std::cout << "Hello World!\nHello World!\n";
     std::cout << "내 이름은 고병조입니다.\n" << "나는 사람입니다.\n";
@@ -47,9 +173,8 @@ int main()
 
     // 실습 - 변수들을 이용해서 + - * / 사용해보기
     // 자세히 볼것들
-        // int 나누기
-        // int와 float끼리 계산해보기
-
+    // int 나누기
+    // int와 float끼리 계산해보기
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
