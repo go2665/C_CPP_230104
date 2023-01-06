@@ -34,6 +34,8 @@ int main()
     //(*pi) = 200;
 
     // 제어문 ( Control Statement )
+
+    // 조건문
     bool con = 1 < 10;  // true
     if ( con )          // 만약에 괄호안이 true면 {}를 실행해라
     {
@@ -43,30 +45,148 @@ int main()
     bool isRight = false;
     if (isRight)
     {
-        std::cout << "오른쪽으로 가시오";
+        std::cout << "오른쪽으로 가시오\n";
     }
 
     if (!isRight)
     {
-        std::cout << "왼쪽으로 가시오";
+        std::cout << "왼쪽으로 가시오\n";
     }
 
     if (isRight)       //만약에 () 사이가 true면 A부분을 실행하고 false면 B부분을 실행해라.
     {
         // A부분
-        std::cout << "오른쪽으로 가시오";
+        std::cout << "오른쪽으로 가시오\n";
     }
     else
     {
         // B부분
-        std::cout << "왼쪽으로 가시오";
+        std::cout << "왼쪽으로 가시오\n";
     }
 
     // 실습
     // 입력을 받아서 input에 값을 저장하기
     // input의 값이 홀수면 "홀수입니다."를 출력한다.
     // input의 값이 짝수면 "짝수입니다."를 출력한다.
-    int input;
+    //int input;
+    //std::cout << "숫자를 입력하세요 : ";
+    //std::cin >> input;
+    //if (input % 2 == 0)
+    //{
+    //    std::cout << "짝수입니다.\n";
+    //}
+    //else
+    //{
+    //    std::cout << "홀수입니다.\n";
+    //}
+
+    //std::cout << "숫자를 입력하세요 : ";
+    //std::cin >> input;
+    //if ( input < 10 )
+    //{
+    //    // 0 ~ 9
+    //    std::cout << "input은 0~9 사이입니다.\n ";
+    //}
+    //else if ( input < 100 )
+    //{
+    //    // 10 ~ 99
+    //    std::cout << "input은 10~99 사이입니다.\n ";
+    //}
+    //else
+    //{
+    //    // 100 ~
+    //    std::cout << "input은 100 이상입니다.\n";
+    //}
+
+    int switchNum = 1;
+    switch (switchNum)  // switch : 조건이 정확하게 지정되어있을 때 유용하다.
+    {
+    case 0:
+    case 1:
+        std::cout << "0이 나왔습니다.\n";
+        std::cout << "1이 나왔습니다.\n";
+        break;
+    case 2:
+        std::cout << "2가 나왔습니다.\n";
+        break;
+    default:
+        std::cout << "0,1,2가 아니다.\n";
+        break;
+    }
+
+    // 반복문
+    // while : ()안이 참이면 {}를 반복한다.
+    
+    /*while (true)
+    {
+        std::cout << "안녕하세요.\n";
+    }*/ 
+
+    // 실습 : 안녕하세요를 3번 출력하기
+    int count = 0;
+    while (count < 3)
+    {
+        std::cout << "안녕하세요.\n";
+        count++;
+    }
+
+    count = 0;
+    do
+    {
+        std::cout << "안녕하세요2.\n";
+        count++;
+    } while (count<3); // do-while은 일단 {}내용을 실행하고 조건을 확인. 최소 한번은 실행해야 할 때 유용
+
+    // i가 0부터 시작해서 ; i가 3보다 작을 때까지 ; 매번 i를 1씩 증가시키면서 반복해라
+    for (int i = 0; i < 3; i++)     
+    {
+        std::cout << "안녕하세요3.\n";
+    }
+
+    count = 0;
+    // 무한 루프
+    while (true)
+    {
+        std::cout << "안녕하세요4.\n";
+        count++;
+        if (count > 2)
+        {
+            break;      // while 같은 것도 캔슬 할 수 있다.
+        }
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << "출력 : ";
+        if (i % 2 == 0)
+            continue;       // 루프 안에서 이후 부분은 스킵하고 루프의 첫부분으로 이동
+
+        std::cout << i << " 안녕하세요.\n";
+    }
+
+    //RAND_MAX = 32767
+    srand(time(NULL));      // 랜덤 함수에 현재 시간을 시드값으로 설정한다.
+    for (int i = 0; i < 10; i++)
+    {
+        int random = rand();    // random이라는 변수에 랜덤한 숫자를 준다. 0~RAND_MAX
+        std::cout << random << std::endl;
+    }
+
+    int money = 1000;
+    do
+    {
+        // 한번 실행할 때마다 랜덤으로 -100~100사이의 결과를 얻고 싶다.
+        int result; // 랜덤으로 나온 결과를 저장할 변수
+        //result = 
+        
+        // 나온 결과는 money에 더해진다.
+        money += result;
+
+        // "다시 하고 싶으면 1, 끝내고 싶으면 2를 입력하세요 : "
+        std::cout << "다시 하고 싶으면 1, 끝내고 싶으면 2를 입력하세요 : ";
+        int input;
+        std::cin >> input;
+    }while (true);  // input이 1이 아니거나 money가 다 떨어졌을 때 종료하도록 조건 변경하기
 }
 
 void Day02()
