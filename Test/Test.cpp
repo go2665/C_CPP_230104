@@ -7,7 +7,70 @@
 int main() 
 {
     // Day01();
+    // Day02();
 
+    // 포인터(Pointer) : 메모리의 주소를 저장하는 변수
+    int* pi;        // int의 포인터 타입
+    float* pf;      // float의 포인터 타입
+
+    int i = 10;
+
+    pi = &i;        // i의 주소를 pi에 넣아라.
+
+    std::cout << "i : " << i << ", i의 주소 : " << &i << std::endl;
+
+    (*pi) = 100;    // pi에 기록된 주소를 찾아가서 그곳의 데이터를 100으로 바꾼다.
+    std::cout << "i : " << i << ", i의 주소 : " << &i << std::endl;
+
+    int j = i;
+
+    // k에 i의 값을 복사해주고 싶은데 나는 pi밖에 모를 때.
+    // 코드를 어떻게 작성해야 하나?
+    int k = (*pi);  // pi가 가지고 있는 주소에 있는 데이터를 k에 복사해라.
+
+    std::cout << "pi : " << pi << std::endl;
+    pi = pi + 1;    // pi가 12일 때 pi + 1은?  => 16
+    std::cout << "pi : " << pi << std::endl;
+    //(*pi) = 200;
+
+    // 제어문 ( Control Statement )
+    bool con = 1 < 10;  // true
+    if ( con )          // 만약에 괄호안이 true면 {}를 실행해라
+    {
+        std::cout << "1은 10보다 작습니다.\n";
+    }
+
+    bool isRight = false;
+    if (isRight)
+    {
+        std::cout << "오른쪽으로 가시오";
+    }
+
+    if (!isRight)
+    {
+        std::cout << "왼쪽으로 가시오";
+    }
+
+    if (isRight)       //만약에 () 사이가 true면 A부분을 실행하고 false면 B부분을 실행해라.
+    {
+        // A부분
+        std::cout << "오른쪽으로 가시오";
+    }
+    else
+    {
+        // B부분
+        std::cout << "왼쪽으로 가시오";
+    }
+
+    // 실습
+    // 입력을 받아서 input에 값을 저장하기
+    // input의 값이 홀수면 "홀수입니다."를 출력한다.
+    // input의 값이 짝수면 "짝수입니다."를 출력한다.
+    int input;
+}
+
+void Day02()
+{
     // Day02
     // 산술연산자 : + - * /
     int a = 10;         // a라는 이름을 가진, int 타입의 변수를 만들고, 10이라는 값을 넣어라
@@ -123,10 +186,17 @@ int main()
     std::cout << std::bitset<4>(c) << " (0001가 나와야 한다.)" << std::endl;
 
     // 실습
-    // int a; 에 3번째 비트가 1인지 확인해서 bool d;에 1이면 true 아니면 false를 넣는 코드 작성하기
-    a = 6; // d = true;
-    a = 8; // d = false;
+    // int a; 에 세번째 비트가 1인지 확인해서 bool d;에 1이면 true 아니면 false를 넣는 코드 작성하기
+    a = 6; // 6 = 0110, d = true;
+    a = 8; // 8 = 1000, d = false;
 
+    // <<, &, !=
+
+    // 1 = 0001 오른쪽이 끝이다.
+    int flag = 1 << 2;  // 0100
+    d = (a & flag) != 0;   // a & flag가 0이 아니면 true, 0이면 false
+    int flag2 = 1 << 1; // 0010
+    flag |= flag2;      // flag = 0110
 }
 
 void Day01()
