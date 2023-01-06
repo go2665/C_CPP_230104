@@ -177,7 +177,7 @@ int main()
     {
         // 한번 실행할 때마다 랜덤으로 -100~100사이의 결과를 얻고 싶다.
         int result; // 랜덤으로 나온 결과를 저장할 변수
-        //result = 
+        result = -100 + rand() % 201;
         
         // 나온 결과는 money에 더해진다.
         money += result;
@@ -187,6 +187,8 @@ int main()
         int input;
         std::cin >> input;
     }while (true);  // input이 1이 아니거나 money가 다 떨어졌을 때 종료하도록 조건 변경하기
+
+    // 주말 과제 : 가위 바위 보 만들기
 }
 
 void Day02()
