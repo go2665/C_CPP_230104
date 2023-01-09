@@ -15,67 +15,120 @@ int main()
 
     cout << "가위 바위 보를 합시다.\n";
 
-    // 나의 가위바위보 선택
-    int select = 0;
-    while (select < 1 || select > 3)
+    int retry = 1;
+
+    while (retry == 1)
     {
-        cout << "\n\n가위바위보를 선택하세요(1:가위, 2:바위, 3:보) : ";
-        cin >> select;
-        RockPaperScissors mSelect = (RockPaperScissors)select;
-        switch (mSelect)
+        // 나의 가위바위보 선택
+        int select = 0;
+        while (select < 1 || select > 3)
+        {
+            cout << "\n\n가위바위보를 선택하세요(1:가위, 2:바위, 3:보) : ";
+            cin >> select;
+            RockPaperScissors mSelect = (RockPaperScissors)select;
+            switch (mSelect)
+            {
+            case Scissors:
+                cout << "당신은 가위를 냈습니다.\n";
+                break;
+            case Rock:
+                cout << "당신은 바위를 냈습니다.\n";
+                break;
+            case Paper:
+                cout << "당신은 보를 냈습니다.\n";
+                break;
+            default:
+                cout << "잘못된 입력입니다. 다시 입력하세요.\n";
+                break;
+            }
+        }
+
+        // 적의 선택
+        int enemySelect = rand() % 3 + 1;
+        // int를 enum인 RockPaperScissors 타입으로 캐스팅했다.
+        RockPaperScissors eSelect = (RockPaperScissors)enemySelect;
+        switch (eSelect)
         {
         case Scissors:
-            cout << "당신은 가위를 냈습니다.\n";
+            cout << "상대는 가위를 냈습니다.\n";
             break;
         case Rock:
-            cout << "당신은 바위를 냈습니다.\n";
+            cout << "상대는 바위를 냈습니다.\n";
             break;
         case Paper:
-            cout << "당신은 보를 냈습니다.\n";
+            cout << "상대는 보를 냈습니다.\n";
             break;
         default:
-            cout << "잘못된 입력입니다. 다시 입력하세요.\n";
             break;
         }
-    }
 
-    // 적의 선택
-    int enemySelect = rand() % 3 + 1;
-    // int를 enum인 RockPaperScissors 타입으로 캐스팅했다.
-    RockPaperScissors eSelect = (RockPaperScissors)enemySelect; 
-    switch (eSelect)
-    {
-    case Scissors:
-        cout << "상대는 가위를 냈습니다.\n";
-        break;
-    case Rock:
-        cout << "상대는 바위를 냈습니다.\n";
-        break;
-    case Paper:
-        cout << "상대는 보를 냈습니다.\n";
-        break;
-    default:
-        break;
-    }
+        // 승패 결정 내리기
+        RPS_Result result = Draw;
+        if (select == Scissors)
+        {
+            if (enemySelect == Scissors)
+            {
+                result = Draw;
+            }
+            else if (enemySelect == Rock)
+            {
+                result = Lose;
+            }
+            else if (enemySelect == Paper)
+            {
+                result = Win;
+            }
+        }
+        else if (select == Rock)
+        {
+            if (enemySelect == Scissors)
+            {
+                result = Win;
+            }
+            else if (enemySelect == Rock)
+            {
+                result = Draw;
+            }
+            else if (enemySelect == Paper)
+            {
+                result = Lose;
+            }
+        }
+        else if (select == Paper)
+        {
+            if (enemySelect == Scissors)
+            {
+                result = Lose;
+            }
+            else if (enemySelect == Rock)
+            {
+                result = Win;
+            }
+            else if (enemySelect == Paper)
+            {
+                result = Draw;
+            }
+        }
 
-    // 승패 결정 내리기
-    int result = -1;    // 0이면 이겼다. 1이면 졌다. 2면 비겼다.
-    if (select == Scissors)
-    {
-        if (enemySelect == Scissors)
+        // 승패 결과 출력
+        switch (result)
         {
-            result = Draw;
+        case Win:
+            cout << "당신은 승리했습니다.\n";
+            break;
+        case Lose:
+            cout << "당신은 패배했습니다.\n";
+            break;
+        case Draw:
+            cout << "비겼습니다.\n";
+            break;
+        default:
+            break;
         }
-        else if (enemySelect == Rock)
-        {
-            result = Lose;
-        }
-        else if (enemySelect == Paper)
-        {
-            result = Win;
-        }
-    }
 
+        cout << "다시 하시겠습니까? (1:예, 다른수:아니오) : ";
+        cin >> retry;
+    }
 
 }
 
