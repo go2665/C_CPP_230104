@@ -28,4 +28,4 @@ void Day03();
 
 void Day03_SlotMachine();
 
-void Day03_RockPaperScissors();
+void Day04_RockPaperScissors();

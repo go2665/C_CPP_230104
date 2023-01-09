@@ -10,10 +10,48 @@ int main()
     // Day02();
     // Day03();
     // Day03_SlotMachine();   
-    Day03_RockPaperScissors();
+    // Day04_RockPaperScissors();
+
+    int str;
+    int dex;
+    int stm;
+    int intelligence;
+    int wisdom;
+
+    // 배열(같은 종류의 데이터를 여러개 가질 수 있다.)
+    int status[5];  // int 5개짜리 배열
+    status[0] = 10;
+    status[1] = 20;
+    status[2] = 30;
+    status[3] = 40;
+    status[4] = 50;
+
+    // &(status[0]) == status   // 배열에 저장된 값은 배열의 첫번째 데이터의 주소이다.
+
+    int* pStatus = &(status[0]);
+
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "i = " << i << "\tstatus[i] = " << status[i] << endl;
+        cout << "i = " << i << "\tpStatus + i = " << *(pStatus + i) << endl << endl;
+    }
+
+    // 실습 - int 9개짜리 배열을 만들고 숫자를 하나입력받아 그 숫자의 구구단을 배열에 저장하고 출력
+    // ex) 5를 입력받았으면 배열에다가 5단을 기억 시키고 배열에 들어있는 내용을 순서대로 출력한다.
+
+    int gugu[9];
+    //int gugu2[9] = {1,2,3,4,5,6,7,8,9};
+    int input = 0;
+    cout << "\n\n\n구구단을 출력할 숫자를 입력하세요 : ";
+    cin >> input;    
+    for (int i = 0; i < 9; i++)
+    {
+        gugu[i] = input * (i + 1);
+        cout << input << " * " << (i + 1) << " = " << gugu[i] << endl;
+    }
 }
 
-void Day03_RockPaperScissors()
+void Day04_RockPaperScissors()
 {
     srand(time(NULL));
 
