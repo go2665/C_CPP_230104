@@ -2,13 +2,130 @@
 //
 #include <iostream>     // iostream의 기능을 쓰겠다.
 #include "Test.h"
-//using namespace std;
+using namespace std;
 
 int main() 
 {
     // Day01();
     // Day02();
+    // Day03();
+    // Day03_SlotMachine();
 
+    srand(time(NULL));
+
+    cout << "가위 바위 보를 합시다.\n";
+
+    // 나의 가위바위보 선택
+    int select = 0;
+    while (select < 1 || select > 3)
+    {
+        cout << "\n\n가위바위보를 선택하세요(1:가위, 2:바위, 3:보) : ";
+        cin >> select;
+        RockPaperScissors mSelect = (RockPaperScissors)select;
+        switch (mSelect)
+        {
+        case Scissors:
+            cout << "당신은 가위를 냈습니다.\n";
+            break;
+        case Rock:
+            cout << "당신은 바위를 냈습니다.\n";
+            break;
+        case Paper:
+            cout << "당신은 보를 냈습니다.\n";
+            break;
+        default:
+            cout << "잘못된 입력입니다. 다시 입력하세요.\n";
+            break;
+        }
+    }
+
+    // 적의 선택
+    int enemySelect = rand() % 3 + 1;
+    // int를 enum인 RockPaperScissors 타입으로 캐스팅했다.
+    RockPaperScissors eSelect = (RockPaperScissors)enemySelect; 
+    switch (eSelect)
+    {
+    case Scissors:
+        cout << "상대는 가위를 냈습니다.\n";
+        break;
+    case Rock:
+        cout << "상대는 바위를 냈습니다.\n";
+        break;
+    case Paper:
+        cout << "상대는 보를 냈습니다.\n";
+        break;
+    default:
+        break;
+    }
+
+    // 승패 결정 내리기
+    int result = -1;    // 0이면 이겼다. 1이면 졌다. 2면 비겼다.
+    if (select == Scissors)
+    {
+        if (enemySelect == Scissors)
+        {
+            result = Draw;
+        }
+        else if (enemySelect == Rock)
+        {
+            result = Lose;
+        }
+        else if (enemySelect == Paper)
+        {
+            result = Win;
+        }
+    }
+
+
+}
+
+void Day03_SlotMachine()
+{
+    // 슬롯 머신
+    srand(time(NULL));  // 시드값을 현재 시간으로 설정
+    int money = 1000;
+
+    while (true)
+    {
+        std::cout << "현재 " << money << "원을 가지고 있습니다.\n";
+        std::cout << "슬롯을 돌립니다";
+
+        for (int i = 0; i < 10; i++)
+        {
+            Sleep(100);         // 0.1초(100 마이크로 세컨드) 기다리기
+            std::cout << ".";
+        }
+
+        int result = -100 + rand() % 201;
+        if (result > 0)
+        {
+            std::cout << std::endl << result << "원을 얻었습니다.\n";
+        }
+        else if (result < 0)
+        {
+            std::cout << std::endl << abs(result) << "원을 잃었습니다.\n";
+        }
+        else
+        {
+            std::cout << std::endl << "따지도 잃지도 않았습니다.\n";
+        }
+
+        money += result;
+
+        std::cout << "다시 하고 싶으면 1, 끝내고 싶으면 다른수를 입력하세요 : ";
+        int input;
+        std::cin >> input;
+
+        if (input != 1)
+        {
+            break;
+        }
+    }
+    std::cout << "종료합니다.\n\n";
+}
+
+void Day03()
+{
     // 포인터(Pointer) : 메모리의 주소를 저장하는 변수
     int* pi;        // int의 포인터 타입
     float* pf;      // float의 포인터 타입
@@ -37,7 +154,7 @@ int main()
 
     // 조건문
     bool con = 1 < 10;  // true
-    if ( con )          // 만약에 괄호안이 true면 {}를 실행해라
+    if (con)          // 만약에 괄호안이 true면 {}를 실행해라
     {
         std::cout << "1은 10보다 작습니다.\n";
     }
@@ -116,11 +233,11 @@ int main()
 
     // 반복문
     // while : ()안이 참이면 {}를 반복한다.
-    
+
     /*while (true)
     {
-        std::cout << "안녕하세요.\n";
-    }*/ 
+    std::cout << "안녕하세요.\n";
+    }*/
 
     // 실습 : 안녕하세요를 3번 출력하기
     int count = 0;
@@ -138,7 +255,7 @@ int main()
     } while (count<3); // do-while은 일단 {}내용을 실행하고 조건을 확인. 최소 한번은 실행해야 할 때 유용
 
     // i가 0부터 시작해서 ; i가 3보다 작을 때까지 ; 매번 i를 1씩 증가시키면서 반복해라
-    for (int i = 0; i < 3; i++)     
+    for (int i = 0; i < 3; i++)
     {
         std::cout << "안녕하세요3.\n";
     }
@@ -177,8 +294,10 @@ int main()
     {
         // 한번 실행할 때마다 랜덤으로 -100~100사이의 결과를 얻고 싶다.
         int result; // 랜덤으로 나온 결과를 저장할 변수
-        result = -100 + rand() % 201;
-        
+        //result = -100 + rand() % 201;
+        result = rand() % 201;  // 0 ~ 200
+        result -= 100;          // -100 ~ 100
+
         // 나온 결과는 money에 더해진다.
         money += result;
 
@@ -186,7 +305,7 @@ int main()
         std::cout << "다시 하고 싶으면 1, 끝내고 싶으면 2를 입력하세요 : ";
         int input;
         std::cin >> input;
-    }while (true);  // input이 1이 아니거나 money가 다 떨어졌을 때 종료하도록 조건 변경하기
+    } while (true);  // input이 1이 아니거나 money가 다 떨어졌을 때 종료하도록 조건 변경하기
 
     // 주말 과제 : 가위 바위 보 만들기
 }
