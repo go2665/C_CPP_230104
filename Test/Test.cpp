@@ -9,8 +9,12 @@ int main()
     // Day01();
     // Day02();
     // Day03();
-    // Day03_SlotMachine();
+    // Day03_SlotMachine();   
+    Day03_RockPaperScissors();
+}
 
+void Day03_RockPaperScissors()
+{
     srand(time(NULL));
 
     cout << "가위 바위 보를 합시다.\n";
@@ -129,7 +133,6 @@ int main()
         cout << "다시 하시겠습니까? (1:예, 다른수:아니오) : ";
         cin >> retry;
     }
-
 }
 
 void Day03_SlotMachine()
