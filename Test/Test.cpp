@@ -11,7 +11,41 @@ int main()
     // Day03();
     // Day03_SlotMachine();   
     // Day04_RockPaperScissors();
+    // Day04();
+    
+    srand(time(NULL));
+    int cup[3] = { Fail, Fail, Fail };
+    cout << "cup의 크기는 " << sizeof(cup) << endl; // sizeof(cup) / sizeof(int) 는 배열의 크기
+    cout << "int의 크기는 " << sizeof(int) << endl;
+    int size = sizeof(cup) / sizeof(int);           // 3
 
+    int select = rand() % size;    // 0,1,2 중 하나
+    cup[select] = Winning;
+
+    int mySelect = -1;
+    while (mySelect < 0 || mySelect > (size - 1))
+    {
+        cout << "어느것을 선택할까요?(0~2를 선택하세요) : ";
+        cin >> mySelect;
+        if (mySelect < 0 || mySelect > (size - 1))
+        {
+            cout << "숫자를 잘못 입력했습니다. 다시 입력하세요. \n";
+        }
+    }
+
+    if (cup[mySelect] == Winning)
+    {
+        cout << "당신의 승리입니다.\n\n";
+    }
+    else
+    {
+        cout << "당신의 패배입니다.\n\n";
+    }
+    
+}
+
+void Day04()
+{
     int str;
     int dex;
     int stm;
@@ -43,7 +77,7 @@ int main()
     //int gugu2[9] = {1,2,3,4,5,6,7,8,9};
     int input = 0;
     cout << "\n\n\n구구단을 출력할 숫자를 입력하세요 : ";
-    cin >> input;    
+    cin >> input;
     for (int i = 0; i < 9; i++)
     {
         gugu[i] = input * (i + 1);

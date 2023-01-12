@@ -18,6 +18,11 @@ enum RPS_Result
 	Draw	// = 2
 };
 
+enum Trickery
+{
+	Fail,
+	Winning
+};
 
 
 void Day01();
@@ -29,3 +34,5 @@ void Day03();
 void Day03_SlotMachine();
 
 void Day04_RockPaperScissors();
+
+void Day04();
