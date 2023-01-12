@@ -3,6 +3,8 @@
 #include <stdlib.h>		// 표준 라이브러리를 사용하기 위한 해더
 #include <time.h>		// 시간을 받아오기 위한 해더
 #include <Windows.h>	// 윈도우에서만 사용되는 것들을 사용하기 위한 해더
+#include <string.h>		// 문자열 처리 함수들을 사용하기 위한 해더
+
 
 enum RockPaperScissors
 {
@@ -36,3 +38,5 @@ void Day03_SlotMachine();
 void Day04_RockPaperScissors();
 
 void Day04();
+
+void Day05_RandomSelect();

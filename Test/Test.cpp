@@ -12,7 +12,75 @@ int main()
     // Day03_SlotMachine();   
     // Day04_RockPaperScissors();
     // Day04();
+    // Day05_RandomSelect();
     
+    int array_1d[4];    // 크기 4짜리 1차원 배열    (데이터 갯수는 4개)
+    int array_2d[4][4]; // 크기 4*4짜리 2차원 배열. (데이터 갯수는 16개)
+    int array[3][4];    // 크기 4짜리 1차원 배열을 3개 겹친 것
+        
+    // 실습 : array에 1부터 12까지 순서대로 넣어보기(for문을 이용할 것)
+
+    // F9 : 단축키를 통해 브레이크 포인트를 설정/해제할 수 있다.
+
+    int num = 1;
+    for (int y = 0; y < 3; y++)
+    {
+        for (int x = 0; x < 4; x++)
+        {
+            array[y][x] = num;
+            num++;
+        }
+    }
+
+    int size = 3 * 4;
+    num = 0;
+    for (int i = 0; i < size; i++)
+    {
+        int* pArray = &array[0][0] + i; // array[0][0]의 주소에 i만큼 더한다. (i*4만큼 주소가 변경됨)  
+        *pArray = num;          // 위에서 계산한 주소가 가리키는 곳에 저장된 데이터를 num으로 변경
+    }
+
+    // array[2];
+    // array + 2
+
+    // array[3][2]  // 가로2 세로3
+    // array[2][1] = 3; array + (2 * 2 + 1)
+
+    char str[10] = "Hello";
+    const char* str2 = "Hello";
+    
+    cout << str << endl;
+
+    str[3] = '\0';
+    cout << str << endl;
+
+    cout << "str2의 길이는 " << strlen(str2) << "입니다." << endl;
+
+    const char* str3 = " World";
+    char strDest[128];
+    strcpy(strDest, str2);  // 문자열 복사하기
+    strcat(strDest, str3);  // 문자열 붙여넣기
+    if (strcmp(strDest, "Hello World") == 0)    // 문자열 비교하기
+    {
+        cout << "strDest와 Hello World는 같다" << endl;
+    }
+
+    int num2 = atoi("123");     // 글자를 숫자로 바꾸는 함수
+    char strDest2[64];
+    _itoa(num2, strDest2, 10);  // 숫자를 글자로 바꾸는 함수
+
+    //cout << strDest << endl;
+
+    const char* testString = "01_Hello";
+    char resultString[32];
+
+    // 실습 : testString이 가지는 내용에서 _ 이후부분만 잘라서 resultString에 넣기
+
+    int i = 0;
+}
+
+void Day05_RandomSelect()
+{
     srand(time(NULL));
     int cup[3] = { Fail, Fail, Fail };
     cout << "cup의 크기는 " << sizeof(cup) << endl; // sizeof(cup) / sizeof(int) 는 배열의 크기
@@ -23,11 +91,11 @@ int main()
     cup[select] = Winning;
 
     int mySelect = -1;
-    while (mySelect < 0 || mySelect > (size - 1))
+    while (mySelect < 0 || mySelect >(size - 1))
     {
         cout << "어느것을 선택할까요?(0~2를 선택하세요) : ";
         cin >> mySelect;
-        if (mySelect < 0 || mySelect > (size - 1))
+        if (mySelect < 0 || mySelect >(size - 1))
         {
             cout << "숫자를 잘못 입력했습니다. 다시 입력하세요. \n";
         }
@@ -41,7 +109,6 @@ int main()
     {
         cout << "당신의 패배입니다.\n\n";
     }
-    
 }
 
 void Day04()
