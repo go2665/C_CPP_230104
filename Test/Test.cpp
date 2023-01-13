@@ -13,11 +13,131 @@ int main()
     // Day04_RockPaperScissors();
     // Day04();
     // Day05_RandomSelect();
+    // Day05();
     
+
+    // 문자열 활용하기
+
+    const char* testString = "01_Hello";
+    char resultString[32];
+
+    // 실습 : testString이 가지는 내용에서 _ 이후부분만 잘라서 resultString에 넣기
+
+    // 1. testString의 내용을 확인하기
+    // 2. _ 부분을 찾을 수 있어야 한다.
+    // 3. 문자열을 복사할 수 있어야 한다.
+
+    // for( 변수만들기; 조건 설정하기 ; 변수 변경하기)
+    int size = strlen(testString);  // testString의 길이 구하기
+    for (int i=0; i < size; i++ )   // i가 0에서 (size - 1)만큼 될때까지 반복시키기(i는 1씩 계속 증가)
+    {
+        if (testString[i] == '_')   // testString에 '_'가 있는지 처음부터 하나씩 확인
+        {
+            strcpy(resultString, testString + i + 1);   // '_'가 있으면 그 이후의 위치를 복사
+            break;
+        }
+    }
+
+    cout << "resultString : " << resultString << endl;
+
+    int index = 0;
+    while (testString[index] != '*' && testString[index] != '\0')
+    {
+        index++;
+    }
+
+    if (testString[index] != '\0')
+        strcpy(resultString, testString + index + 1);
+    else
+        resultString[0] = '\0';
+
+    cout << "resultString : " << resultString << endl;
+
+    strcpy(resultString, strstr(testString, "_") + 1);
+    cout << "resultString : " << resultString << endl;
+
+    // strlen : 문자열 길이 구하기
+    // 실습 : test1의 길이를 구하는 코드 작성하기.(strlen 사용금지)
+
+    // strcmp : 문자열이 같은지 다른지 구하기
+    // 실습 : test1과 "Hello world!"가 같으면 result에 true 다르면 false를 넣는 코드 작성하기(strcmp 사용금지)
+
+    const char* test1 = "Hello World!";
+    bool result;
+
+    int length = 0;
+    while (test1[length] != '\0')
+    {
+        length++;
+    }
+    cout << "test1의 길이는 " << length << "이다.\n";
+    cout << "test1의 길이는 " << strlen(test1) << "이다.\n";
+
+    int cmpLength = strlen(test1);
+    const char* test2 = "Hello world!";
+    result = true;
+    for (int i = 0; i < cmpLength; i++)
+    {
+        if (test1[i] != test2[i])
+        {
+            result = false;
+            break;
+        }
+    }
+
+    if (result)
+        cout << "\"" << test1 << "\"과 " << "\"" << test2 << "\"는 서로 같다.";
+    else
+        cout << "\"" << test1 << "\"과 " << "\"" << test2 << "\"는 서로 다르다.";
+        
+    // 동적 할당
+    int array[5] = { 1,2,3,4,5 };
+
+    // 숫자를 1~5를 입력받아서 입력 크기만큼 배열을 만들어서 array에 있는 것을 복사하고 싶다.
+    int input = 3;  // 입력받은 수라고 가정
+
+    // C 언어 방식
+    // malloc은 void*로 결과를 돌려주는데 우리가 사용하는것은 int* 이기 때문에 캐스팅을 해줘야 한다.
+    int* pArray = (int *)malloc(input * sizeof(int));   // 메모리 할당
+    for (int i = 0; i < input; i++)
+    {
+        pArray[i] = array[i];
+    }
+    free(pArray);   // 메모리 해제
+    pArray = NULL;  // 사용이 끝난 주소임을 표시(필수는 아니지만 해주는 것을 매우 추천)
+
+    // C++ 언어 방식
+    int* pArray2 = new int[input];  // pArray2에 int input개 짜리 배열을 만들어서 줘라.
+    delete[] pArray2;               // pArray2가 할당받은 배열 메모리를 해제해라.
+
+    int* pInt = new int;    // pInt에 int를 하나 할당해서 줘라
+    delete pInt;            // pInt가 할당받은 메모리를 해제해라.
+
+
+    // memory leek(메모리 누수)
+    // 메모리를 할당 받고 해제하지 않아 사용 가능한 메모리가 점점 줄어드는 현상
+
+    // 함수(Function)
+    // 특정 기능을 수행하기 위한 코드 뭉치
+
+    // 함수 사용법 : 함수의 이름을 적고 ()사이에 요구되는 파라메터를 입력하면 된다.
+    int result = Sum(1, 2);
+
+
+}
+
+int Sum(int a, int b)
+{
+    int result = a + b;     // 지역변수 : 함수 내부에 존재하는 변수들
+    return result;
+}
+
+void Day05()
+{
     int array_1d[4];    // 크기 4짜리 1차원 배열    (데이터 갯수는 4개)
     int array_2d[4][4]; // 크기 4*4짜리 2차원 배열. (데이터 갯수는 16개)
     int array[3][4];    // 크기 4짜리 1차원 배열을 3개 겹친 것
-        
+
     // 실습 : array에 1부터 12까지 순서대로 넣어보기(for문을 이용할 것)
 
     // F9 : 단축키를 통해 브레이크 포인트를 설정/해제할 수 있다.
@@ -48,13 +168,13 @@ int main()
 
     char str[10] = "Hello";
     const char* str2 = "Hello";
-    
+
     cout << str << endl;
 
     str[3] = '\0';
     cout << str << endl;
 
-    cout << "str2의 길이는 " << strlen(str2) << "입니다." << endl;
+    cout << "str2의 길이는 " << strlen(str2) << "입니다." << endl; // 문자열 길이 구하기
 
     const char* str3 = " World";
     char strDest[128];
@@ -71,12 +191,7 @@ int main()
 
     //cout << strDest << endl;
 
-    const char* testString = "01_Hello";
-    char resultString[32];
-
-    // 실습 : testString이 가지는 내용에서 _ 이후부분만 잘라서 resultString에 넣기
-
-    int i = 0;
+    
 }
 
 void Day05_RandomSelect()
