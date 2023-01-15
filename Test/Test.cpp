@@ -20,7 +20,9 @@ int main()
 
     int inputNum;
     cin >> inputNum;
-    Print_GuGuDan(inputNum);
+    //Print_GuGuDan(inputNum);
+    //Print_Star(inputNum);
+    Print_Pyramid(inputNum);
 
 }
 

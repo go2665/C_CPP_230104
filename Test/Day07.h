@@ -21,4 +21,10 @@ void Print_GuGuDan(int dan);
 //	**
 //	***
 
+// 1시 55분부터 학생 화면 공유 시작
+
 void Print_Star(int floorCount);
+
+
+// flootCount 만큼의 층을 가진 피라미드 그리기( *는 첫번째는 1개, 두번째는 3개, 세번째는 5개 이런 식으로 증가한다.)
+void Print_Pyramid(int floorCount);
