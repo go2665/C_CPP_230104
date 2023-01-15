@@ -14,8 +14,18 @@ int main()
     // Day04();
     // Day05_RandomSelect();
     // Day05();
-    
+    // Day06();
 
+    // 구구단 단수를 입력하면 해당 구구단을 출력하는 함수 만들기
+
+    int inputNum;
+    cin >> inputNum;
+    Print_GuGuDan(inputNum);
+
+}
+
+void Day06()
+{
     // 문자열 활용하기
 
     const char* testString = "01_Hello";
@@ -29,7 +39,7 @@ int main()
 
     // for( 변수만들기; 조건 설정하기 ; 변수 변경하기)
     int size = strlen(testString);  // testString의 길이 구하기
-    for (int i=0; i < size; i++ )   // i가 0에서 (size - 1)만큼 될때까지 반복시키기(i는 1씩 계속 증가)
+    for (int i = 0; i < size; i++)   // i가 0에서 (size - 1)만큼 될때까지 반복시키기(i는 1씩 계속 증가)
     {
         if (testString[i] == '_')   // testString에 '_'가 있는지 처음부터 하나씩 확인
         {
@@ -89,7 +99,7 @@ int main()
         cout << "\"" << test1 << "\"과 " << "\"" << test2 << "\"는 서로 같다.";
     else
         cout << "\"" << test1 << "\"과 " << "\"" << test2 << "\"는 서로 다르다.";
-        
+
     // 동적 할당
     int array[5] = { 1,2,3,4,5 };
 
@@ -98,7 +108,7 @@ int main()
 
     // C 언어 방식
     // malloc은 void*로 결과를 돌려주는데 우리가 사용하는것은 int* 이기 때문에 캐스팅을 해줘야 한다.
-    int* pArray = (int *)malloc(input * sizeof(int));   // 메모리 할당
+    int* pArray = (int*)malloc(input * sizeof(int));   // 메모리 할당
     for (int i = 0; i < input; i++)
     {
         pArray[i] = array[i];
@@ -121,9 +131,7 @@ int main()
     // 특정 기능을 수행하기 위한 코드 뭉치
 
     // 함수 사용법 : 함수의 이름을 적고 ()사이에 요구되는 파라메터를 입력하면 된다.
-    int result = Sum(1, 2);
-
-
+    //int result = Sum(1, 2);
 }
 
 int Sum(int a, int b)

@@ -6,6 +6,7 @@
 #include <string.h>		// 문자열 처리 함수들을 사용하기 위한 해더
 #include <string>
 
+#include "Day07.h"
 
 enum RockPaperScissors
 {
@@ -66,3 +67,5 @@ void Day05();
 //					함수 파라메터 뒤에 있는 {} 영역.
 
 int Sum(int a, int b);
+
+void Day06();
