@@ -1,30 +1,30 @@
-#pragma once			// Áßº¹À¸·Î Ãß°¡µÇ´Â °Íµé ¹æÁö(include ¼ø¼­ ¸ÂÃâ¶§ Æí¸®ÇÏ´Ù.)
+#pragma once			// ì¤‘ë³µìœ¼ë¡œ ì¶”ê°€ë˜ëŠ” ê²ƒë“¤ ë°©ì§€(include ìˆœì„œ ë§žì¶œë•Œ íŽ¸ë¦¬í•˜ë‹¤.)
 #include <iostream>
 
 using namespace std;
 
-// ±¸±¸´Ü ´Ü¼ö¸¦ ÀÔ·ÂÇÏ¸é ÇØ´ç ±¸±¸´ÜÀ» Ãâ·ÂÇÏ´Â ÇÔ¼ö ¸¸µé±â
-// ÇÔ¼ö´Â Æ¯Á¤ ±â´ÉÀ» ¼öÇàÇÏ´Â ÄÚµå ¹¶Ä¡
-// ÇÔ¼öÀÇ ÀÌ¸§ : GuGuDan
-// GuGuDanÀÇ ±â´É : ÀÔ·Â¿¡ ¸Â°Ô ±¸±¸´ÜÀ» È­¸é¿¡ Ãâ·Â
+// êµ¬êµ¬ë‹¨ ë‹¨ìˆ˜ë¥¼ ìž…ë ¥í•˜ë©´ í•´ë‹¹ êµ¬êµ¬ë‹¨ì„ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ ë§Œë“¤ê¸°
+// í•¨ìˆ˜ëŠ” íŠ¹ì • ê¸°ëŠ¥ì„ ìˆ˜í–‰í•˜ëŠ” ì½”ë“œ ë­‰ì¹˜
+// í•¨ìˆ˜ì˜ ì´ë¦„ : GuGuDan
+// GuGuDanì˜ ê¸°ëŠ¥ : ìž…ë ¥ì— ë§žê²Œ êµ¬êµ¬ë‹¨ì„ í™”ë©´ì— ì¶œë ¥
 
-// ¸®ÅÏ Å¸ÀÔ : void. ±× ÀÌÀ¯´Â °á°ú¸¦ ¹Þ¾Æ¿Ã ÀÌÀ¯°¡ ¾øÀ¸´Ï±î.
-// ÀÌ¸§ : Print_GuGuDan
-// ÆÄ¶ó¸ÞÅÍ : Ãâ·ÂÇÒ ´Ü
+// ë¦¬í„´ íƒ€ìž… : void. ê·¸ ì´ìœ ëŠ” ê²°ê³¼ë¥¼ ë°›ì•„ì˜¬ ì´ìœ ê°€ ì—†ìœ¼ë‹ˆê¹Œ.
+// ì´ë¦„ : Print_GuGuDan
+// íŒŒë¼ë©”í„° : ì¶œë ¥í•  ë‹¨
 void Print_GuGuDan(int dan);
 
 
 
-// 1 ÀÌ»óÀÇ ¾ç¼ö¸¦ ÀÔ·ÂÇÏ¸é ÀÔ·ÂµÈ ¼ö ¸¸Å­ *¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö.(´Ü *Àº ÇÑ ÁÙ ³»·Á°¥ ¶§¸¶´Ù 1°³¾¿ Áõ°¡ÇÑ´Ù.)
-// ex) 3À» ÀÔ·ÂÇß´Ù.
+// 1 ì´ìƒì˜ ì–‘ìˆ˜ë¥¼ ìž…ë ¥í•˜ë©´ ìž…ë ¥ëœ ìˆ˜ ë§Œí¼ *ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜.(ë‹¨ *ì€ í•œ ì¤„ ë‚´ë ¤ê°ˆ ë•Œë§ˆë‹¤ 1ê°œì”© ì¦ê°€í•œë‹¤.)
+// ex) 3ì„ ìž…ë ¥í–ˆë‹¤.
 //	*
 //	**
 //	***
 
-// 1½Ã 55ºÐºÎÅÍ ÇÐ»ý È­¸é °øÀ¯ ½ÃÀÛ
+// 1ì‹œ 55ë¶„ë¶€í„° í•™ìƒ í™”ë©´ ê³µìœ  ì‹œìž‘
 
 void Print_Star(int floorCount);
 
 
-// flootCount ¸¸Å­ÀÇ ÃþÀ» °¡Áø ÇÇ¶ó¹Ìµå ±×¸®±â( *´Â Ã¹¹øÂ°´Â 1°³, µÎ¹øÂ°´Â 3°³, ¼¼¹øÂ°´Â 5°³ ÀÌ·± ½ÄÀ¸·Î Áõ°¡ÇÑ´Ù.)
+// floorCount ë§Œí¼ì˜ ì¸µì„ ê°€ì§„ í”¼ë¼ë¯¸ë“œ ê·¸ë¦¬ê¸°( *ëŠ” ì²«ë²ˆì§¸ëŠ” 1ê°œ, ë‘ë²ˆì§¸ëŠ” 3ê°œ, ì„¸ë²ˆì§¸ëŠ” 5ê°œ ì´ëŸ° ì‹ìœ¼ë¡œ ì¦ê°€í•œë‹¤.)
 void Print_Pyramid(int floorCount);

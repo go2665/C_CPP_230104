@@ -1,11 +1,11 @@
-﻿// Test.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+// Test.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 #include <iostream>     // iostream의 기능을 쓰겠다.
 #include "Test.h"
 using namespace std;
 
 int main() 
-{
+{    
     // Day01();
     // Day02();
     // Day03();
@@ -15,15 +15,58 @@ int main()
     // Day05_RandomSelect();
     // Day05();
     // Day06();
+    // Day07();
 
+    int numbers[] = { 5,27,12,54,4 };
+    int min = INT32_MAX;
+    min = Min1(numbers, sizeof(numbers) / sizeof(int));
+    cout << "Min value is " << min << endl;
+
+    min = Min2(numbers, sizeof(numbers) / sizeof(int));
+    cout << "Min value is " << min << endl;
+
+    int max = Max(numbers, sizeof(numbers) / sizeof(int));
+    cout << "Max value is " << max << endl;
+
+    int clamp = Clamp(12, 5, 15);   // 12
+    cout << "Clamp result is " << clamp << endl;
+
+    clamp = Clamp(2, 5, 15);    // 5
+    cout << "Clamp result is " << clamp << endl;
+
+    clamp = Clamp(22, 5, 15);   // 15
+    cout << "Clamp result is " << clamp << endl;
+
+    
+    cout << "Clamp result is " << ClampTemplate(22, 5, 15) << endl;
+    cout << "Clamp result is " << ClampTemplate(22.5f, 5.5f, 20.1f) << endl;
+
+    PlayerInfo info;    // PlayerInfo 타입의 변수. 이 변수의 이름은 info
+    strcpy(info.name, "Human");
+    info.level = 3;
+    info.exp = 100.0f;
+
+    // "This player's name is Human"
+    // "Human level is 3"
+    // "Human exp is 100.0"
+    cout << "This player's name is " << info.name << endl;
+    cout << info.name << " level is " << info.level << endl;
+    cout << info.name << " exp is " << info.exp << endl;
+
+    Print_PlayerInfo_Deep(info);
+    Print_PlayerInfo(&info);
+
+    int i = 0;
+}
+
+void Day07()
+{
     // 구구단 단수를 입력하면 해당 구구단을 출력하는 함수 만들기
-
     int inputNum;
     cin >> inputNum;
     //Print_GuGuDan(inputNum);
     //Print_Star(inputNum);
     Print_Pyramid(inputNum);
-
 }
 
 void Day06()
