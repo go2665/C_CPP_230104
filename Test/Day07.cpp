@@ -2,7 +2,7 @@
 
 void Print_GuGuDan(int dan)
 {
-	cout << dan << "ë‹¨ì„ ì¶œë ¥í•©ë‹ˆë‹¤.\n";
+	cout << dan << "´ÜÀ» Ãâ·ÂÇÕ´Ï´Ù.\n";
 
 	for (int i = 1; i < 10; i++)
 	{
@@ -12,10 +12,10 @@ void Print_GuGuDan(int dan)
 
 void Print_Star(int floorCount)
 {
-	// floorCountë§Œí¼ ì—¬ëŸ¬ì¤„ì„ ì°ê¸°
+	// floorCount¸¸Å­ ¿©·¯ÁÙÀ» Âï±â
 	for (int i = 0; i < floorCount; i++)
 	{
-		// 1~floorCountë§Œí¼ì˜ ê¸¸ì´ê°€ ë˜ëŠ” *ë¡œ ì´ë£¨ì–´ì§„ ì¤„ ì°ê¸°
+		// 1~floorCount¸¸Å­ÀÇ ±æÀÌ°¡ µÇ´Â *·Î ÀÌ·ç¾îÁø ÁÙ Âï±â
 		int starCount = i + 1;
 		for (int j = 0; j < starCount; j++)
 		{
@@ -29,12 +29,12 @@ void Print_Pyramid(int floorCount)
 {
 	int maxCount = floorCount * 2 - 1;
 
-	// floorCountë§Œí¼ ì—¬ëŸ¬ì¤„ì„ ì°ê¸°
+	// floorCount¸¸Å­ ¿©·¯ÁÙÀ» Âï±â
 	for (int i = 0; i < floorCount; i++)
 	{
-		// *í‘œ ì•žì— " "ì„ ëª‡ê°œ ì°ì„ ê²ƒì¸ì§€ ê²°ì •í•˜ê³  ì°ê¸°
-		//		ì¸µê°¯ìˆ˜ - 1ì—ì„œ 0ê¹Œì§€		
-		//for (int j = floorCount - 1; j > i; j--)		// ë³´ê¸°ì—ëŠ” ë‹¤ë¥´ì§€ë§Œ ê°™ì€ ë‚´ìš©
+		// *Ç¥ ¾Õ¿¡ " "À» ¸î°³ ÂïÀ» °ÍÀÎÁö °áÁ¤ÇÏ°í Âï±â
+		//		Ãþ°¹¼ö - 1¿¡¼­ 0±îÁö		
+		//for (int j = floorCount - 1; j > i; j--)		// º¸±â¿¡´Â ´Ù¸£Áö¸¸ °°Àº ³»¿ë
 		//for (int j = 0; j < floorCount - 1 - i; j++)
 		int starCount = i * 2 + 1;
 		int spaceCount = (maxCount - starCount) / 2;
@@ -43,15 +43,15 @@ void Print_Pyramid(int floorCount)
 			cout << " ";
 		}
 
-		// *í‘œë¥¼ ëª‡ê°œ ì°ì„ì§€ ê²°ì •í•˜ê³  ì°ê¸°(1,3,5,7,9... ì´ë ‡ê²Œ ì¦ê°€í•´ì•¼ í•œë‹¤.)
+		// *Ç¥¸¦ ¸î°³ ÂïÀ»Áö °áÁ¤ÇÏ°í Âï±â(1,3,5,7,9... ÀÌ·¸°Ô Áõ°¡ÇØ¾ß ÇÑ´Ù.)
 		for (int j = 0; j < starCount; j++)
 		{
 			cout << "*";
 		}	
 
-		// ì¤„ë°”ê¾¸ê¸°
+		// ÁÙ¹Ù²Ù±â
 		cout << endl;		
 	}	
 }
 
-// scope(ìŠ¤ì½”í”„) : íŠ¹ì •í•œ ë³€ìˆ˜ë‚˜ í•¨ìˆ˜ë‚˜ í´ëž˜ìŠ¤ë“¤ì´ ì¡´ìž¬í•˜ëŠ” ë²”ìœ„
+// scope(½ºÄÚÇÁ) : Æ¯Á¤ÇÑ º¯¼ö³ª ÇÔ¼ö³ª Å¬·¡½ºµéÀÌ Á¸ÀçÇÏ´Â ¹üÀ§

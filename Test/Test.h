@@ -8,6 +8,7 @@
 
 #include "Day07.h"
 #include "Day08.h"
+#include "Day09.h"
 
 enum RockPaperScissors
 {
@@ -72,3 +73,5 @@ int Sum(int a, int b);
 void Day06();
 
 void Day07();
+
+void Day08();
