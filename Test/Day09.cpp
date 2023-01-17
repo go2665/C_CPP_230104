@@ -89,13 +89,21 @@ void Human::PrintStatus()
 {	
 	cout << " ¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n";
 	printf(" ¦¢ ÀÌ¸§ : %-20s (%d, %.1f%%)                 ¦¢\n", 
-		name, level, (float)exp/ (float)expMax * 100.0f);	// %s : ¹®ÀÚ¿­ Ãâ·Â
+		name, level, (float)exp/ (float)expMax * 100.0f);		
 	printf(" ¦¢ HP   : ( %3d / %3d )     Mana : ( %3d / %3d )    ¦¢\n", 
 		hp, hpMax, mana, manaMax);
-	printf(" ¦¢ Èû   : %5d  ¦¢", strength);			// %5d : 5Ä­¿¡ ¼ýÀÚ Âï±â(¿À¸¥ÂÊ Á¤·Ä)
-	printf("¦¢ Áö´É : %5d  ¦¢", intelligence);	// %-5d : 5Ä­¿¡ ¼ýÀÚ Âï±â(¿ÞÂÊ Á¤·Ä)
-	printf("¦¢ ¹ÎÃ¸ : %5d   ¦¢\n", dexterity);			// %d : int Âï±â
+	printf(" ¦¢ Èû   : %5d  ¦¢", strength);						
+	printf("¦¢ Áö´É : %5d  ¦¢", intelligence);						
+	printf("¦¢ ¹ÎÃ¸ : %5d   ¦¢\n", dexterity);						
 	cout << " ¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n";
+
+	// %d : intÃâ·Â
+	// %f : float Ãâ·Â
+	// %s : ¹®ÀÚ¿­ Ãâ·Â
+	// %% : %Ãâ·Â
+	// %5d : int¸¦ 5ÀÚ¸® ¸ÂÃç¼­ Ãâ·Â(¿À¸¥ÂÊ Á¤·Ä)
+	// %-5d : int¸¦ 5ÀÚ¸® ¸ÂÃç¼­ Ãâ·Â(¿ÞÂÊ Á¤·Ä)
+	// %5.2f : float Ãâ·Â. ¼Ò¼öÁ¡ À§´Â 5ÀÚ¸® È®º¸. ¼Ò¼öÁ¡ ¾Æ·¡´Â 2ÀÚ¸® Ãâ·Â.
 }
 
 void Human::SetRandomStatus()
