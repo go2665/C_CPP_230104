@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -26,6 +28,8 @@ public:
 	Human(const char* name, int level);
 
 	// Çàµ¿
+	void Initialize();
+
 	void Attack(Human* pEnemy);
 	void Defence(int damage);
 	void Die();

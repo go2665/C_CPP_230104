@@ -9,4 +9,6 @@ void TestDay10()
 	delete pHuman;
 	pHuman = nullptr;
 
+	Warrior* pWarrior = new Warrior("적당전사");
+	pWarrior->PrintStatus();
 }
