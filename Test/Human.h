@@ -1,26 +1,9 @@
 #pragma once
-
 #include <iostream>
 
 using namespace std;
 
-void Day09();
-
-// 재귀함수
-// 함수 내부에서 자기 자신을 다시 호출하는 함수
-
-// 팩토리얼 
-// 3! = 3*2*1
-
-int MyFactorial(int num);
-int MyFactorial_Recursive(int num);
-
-// 클래스 = 구조체 + 함수들
-// C++에서 사용.
-// 객체 : 다른 것과 구분이 되는 고유 특성이 있는 것
-// 클래스를 사용하여 객체를 표현한다.
-
-class HumanTest
+class Human
 {
 public:
 	// 데이터
@@ -38,12 +21,12 @@ public:
 	int dexterity = 10;
 
 	// 생성자(이름만 받는 생성자)
-	HumanTest(const char* name);
+	Human(const char* name);
 	// 생성자(이름과 레벨을 받는 생성자)
-	HumanTest(const char* name, int level);
+	Human(const char* name, int level);
 
 	// 행동
-	void Attack(HumanTest* pEnemy);
+	void Attack(Human* pEnemy);
 	void Defence(int damage);
 	void Die();
 
@@ -57,3 +40,4 @@ public:
 	/// </summary>
 	void SetRandomStatus();
 };
+

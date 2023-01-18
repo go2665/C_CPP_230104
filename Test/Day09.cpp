@@ -17,12 +17,12 @@ void Day09()
 	//a.PrintStatus();
 
 	//Human* pHuman = (Human*)malloc(sizeof(Human));
-	Human* pHuman = new Human("개구리");
+	HumanTest* pHuman = new HumanTest("개구리");
 	pHuman->PrintStatus();
 	delete pHuman;
 	pHuman = nullptr;	// NULL
 
-	pHuman = new Human("사람",10);
+	pHuman = new HumanTest("사람",10);
 	pHuman->PrintStatus();
 	delete pHuman;
 	pHuman = nullptr;	// NULL
@@ -54,23 +54,23 @@ int MyFactorial_Recursive(int num)
 	return num * MyFactorial_Recursive(num-1);
 }
 
-Human::Human(const char* name)
+HumanTest::HumanTest(const char* name)
 {
 	strcpy(this->name, name);
 }
 
-Human::Human(const char* name, int level)
+HumanTest::HumanTest(const char* name, int level)
 {
 	strcpy(this->name, name);
 	this->level = level;
 }
 
-void Human::Attack(Human* pEnemy)
+void HumanTest::Attack(HumanTest* pEnemy)
 {
 	pEnemy->Defence(strength);
 }
 
-void Human::Defence(int damage)
+void HumanTest::Defence(int damage)
 {
 	hp -= damage;
 	if (hp < 0)
@@ -79,13 +79,13 @@ void Human::Defence(int damage)
 	}
 }
 
-void Human::Die()
+void HumanTest::Die()
 {
 	// this : 클래스 자기 자신을 가리키는 주소
 	cout << this->name << "는 죽었습니다.\n";
 }
 
-void Human::PrintStatus()
+void HumanTest::PrintStatus()
 {	
 	cout << " ┌──────────────────────────────────────────────────┐\n";
 	printf(" │ 이름 : %-20s (%d, %.1f%%)                 │\n", 
@@ -106,7 +106,7 @@ void Human::PrintStatus()
 	// %5.2f : float 출력. 소수점 위는 5자리 확보. 소수점 아래는 2자리 출력.
 }
 
-void Human::SetRandomStatus()
+void HumanTest::SetRandomStatus()
 {
 	// 힘, 민첩, 지능은 10~100 사이
 	// hpMax는 힘*10
