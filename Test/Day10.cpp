@@ -9,11 +9,11 @@ void TestDay10()
 
 	Warrior* pWarrior = new Warrior("적당전사");
 	pWarrior->PrintStatus();
-	pWarrior->Charge();
+	//pWarrior->Charge();
 
 	Wizard* pWizard = new Wizard("근접법사");
 	pWizard->PrintStatus();
-	pWizard->Fireball();
+	//pWizard->Fireball();
 
 	pHuman->Attack(pWarrior);
 
@@ -21,9 +21,9 @@ void TestDay10()
 	// pWarrior는 Warrior* 타입이지만 Warrior가 Human을 상속 받았기 때문에 Human*에 저장할 수 있다.
 	pTest->Attack(pWizard);
 	//pTest->Charge();	// 저장은 할 수 있지만 Human이 사용가능한 맴버만 사용 가능하다.
-	((Warrior*)pTest)->Charge();	// 캐스팅을 해서 사용하는 것은 가능하다.
+	//((Warrior*)pTest)->Charge();	// 캐스팅을 해서 사용하는 것은 가능하다.
 	Warrior* pTestWarrior = (Warrior*)pTest;
-	pTestWarrior->Charge();
+	//pTestWarrior->Charge();
 
 	//pTestWarrior->proTest = 10;
 

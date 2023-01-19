@@ -7,6 +7,10 @@ public:
 	{
 	}
 
-	void Fireball();
+	virtual void Attack(Human* pEnemy);
+	virtual void Defence(int damage);
+	virtual void Skill1(Human* pTarget);
+
+	void Fireball(Human* pEnemy);
 };
 

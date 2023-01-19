@@ -9,6 +9,10 @@ public:
 		this->proTest = 10;
 		//this->priTest = 20;
 	}
-	void Charge();
+	virtual void Attack(Human* pEnemy);
+	virtual void Defence(int damage);
+	virtual void Skill1(Human* pTarget);
+
+	void Charge(Human* pEnemy);
 };
 

@@ -30,8 +30,10 @@ public:
 	// 행동
 	void Initialize();
 
-	void Attack(Human* pEnemy);
-	void Defence(int damage);
+	virtual void Attack(Human* pEnemy);
+	virtual void Defence(int damage);
+	virtual void Skill1(Human* pTarget);
+
 	void Die();
 
 	/// <summary>
@@ -43,6 +45,12 @@ public:
 	/// 랜덤으로 스테이터스 설정하는 함수
 	/// </summary>
 	void SetRandomStatus();
+
+	/// <summary>
+	/// 이 캐릭터가 죽었는지 확인하는 함수
+	/// </summary>
+	/// <returns>true면 죽었다. false면 살았다.</returns>
+	inline bool IsDie() { return hp <= 0; };
 
 protected:
 	int proTest;

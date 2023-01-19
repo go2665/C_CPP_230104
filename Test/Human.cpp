@@ -24,17 +24,24 @@ void Human::Initialize()
 
 void Human::Attack(Human* pEnemy)
 {
+	cout << "Human::Attack" << endl;
 	cout << this->name << "이(가) " << pEnemy->name << "을(를) 공격합니다.\n";
 	pEnemy->Defence(strength);
 }
 
 void Human::Defence(int damage)
 {
+	cout << this->name << "이(가) " << damage << "의 피해를 입었습니다.\n";
 	hp -= damage;
 	if (hp < 0)
 	{
 		Die();
 	}
+}
+
+void Human::Skill1(Human* pTarget)
+{
+	cout << "첫번째 스킬 발동" << endl;
 }
 
 void Human::Die()
