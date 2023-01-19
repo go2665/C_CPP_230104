@@ -7,6 +7,8 @@ using namespace std;
 
 int main() 
 {    
+    srand(time(nullptr));
+
     // Day01();
     // Day02();
     // Day03();

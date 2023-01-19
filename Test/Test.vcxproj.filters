@@ -36,6 +36,9 @@
     <ClCompile Include="Warrior.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Wizard.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -57,6 +60,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Warrior.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

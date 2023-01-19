@@ -4,6 +4,8 @@ Human::Human(const char* name)
 {
 	strcpy(this->name, name);
 	Initialize();
+
+	priTest = 30;
 }
 
 Human::Human(const char* name, int level)
@@ -14,8 +16,7 @@ Human::Human(const char* name, int level)
 }
 
 void Human::Initialize()
-{
-	srand(time(nullptr));
+{	
 	SetRandomStatus();
 
 	exp = 0;
@@ -23,6 +24,7 @@ void Human::Initialize()
 
 void Human::Attack(Human* pEnemy)
 {
+	cout << this->name << "이(가) " << pEnemy->name << "을(를) 공격합니다.\n";
 	pEnemy->Defence(strength);
 }
 
@@ -124,4 +126,9 @@ void Human::SetRandomStatus()
 	hp = hpMax;
 	manaMax = intelligence * 10;
 	mana = manaMax;
+}
+
+int Human::GetPriTest()
+{
+	return priTest;
 }

@@ -43,5 +43,14 @@ public:
 	/// 랜덤으로 스테이터스 설정하는 함수
 	/// </summary>
 	void SetRandomStatus();
+
+protected:
+	int proTest;
+
+private :
+	int priTest;
+
+public:
+	int GetPriTest();
 };
 

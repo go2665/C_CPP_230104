@@ -6,7 +6,8 @@ class Warrior : public Human
 public:
 	Warrior(const char* name) : Human(name)
 	{
-		strcpy(this->name, name);
+		this->proTest = 10;
+		//this->priTest = 20;
 	}
 	void Charge();
 };

@@ -134,6 +134,7 @@
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Warrior.cpp" />
+    <ClCompile Include="Wizard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day07.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Human.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="Warrior.h" />
+    <ClInclude Include="Wizard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
