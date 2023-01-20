@@ -41,7 +41,7 @@ void Human::Defence(int damage)
 
 void Human::Skill1(Human* pTarget)
 {
-	cout << "첫번째 스킬 발동" << endl;
+	cout << name << "의 첫번째 스킬 발동" << endl;
 }
 
 void Human::Die()

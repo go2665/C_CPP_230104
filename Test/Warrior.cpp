@@ -21,6 +21,7 @@ void Warrior::Defence(int damage)
 
 void Warrior::Skill1(Human* pTarget)
 {
+	Human::Skill1(pTarget);	// 부모인 Human의 Skill1 함수 사용하기
 	Charge(pTarget);
 }
 

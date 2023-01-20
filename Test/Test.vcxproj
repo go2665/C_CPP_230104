@@ -132,7 +132,10 @@
     <ClCompile Include="Day09.cpp" />
     <ClCompile Include="Day10.cpp" />
     <ClCompile Include="Day11.cpp" />
+    <ClCompile Include="Day12.cpp" />
     <ClCompile Include="Human.cpp" />
+    <ClCompile Include="List.cpp" />
+    <ClCompile Include="ListNode.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="Wizard.cpp" />
@@ -143,7 +146,10 @@
     <ClInclude Include="Day09.h" />
     <ClInclude Include="Day10.h" />
     <ClInclude Include="Day11.h" />
+    <ClInclude Include="Day12.h" />
     <ClInclude Include="Human.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="ListNode.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="Warrior.h" />
     <ClInclude Include="Wizard.h" />
