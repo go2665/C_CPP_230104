@@ -8,6 +8,16 @@ class List
 {
 public:
 	/// <summary>
+	/// 생성자
+	/// </summary>
+	List();
+
+	/// <summary>
+	/// 소멸자
+	/// </summary>
+	~List();	// 소멸자에 virtual은 상속할 때는 붙이고 상속을 안한다면 붙이지 마라
+
+	/// <summary>
 	/// 리스트의 시작 노드
 	/// </summary>
 	ListNode* pHead = nullptr;

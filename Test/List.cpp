@@ -1,5 +1,14 @@
 #include "List.h"
 
+List::List()
+{
+}
+
+List::~List()
+{
+	Clear();
+}
+
 void List::Insert(int data, int index)
 {
 	ListNode* pNode = new ListNode();	// 새 노드 만들고
@@ -7,18 +16,32 @@ void List::Insert(int data, int index)
 	pNode->pNext = nullptr;				// 마지막이니까 pNext는 null
 
 
-	// 우선 무조건 제일 마지막에 추가하기
-	if (pTail != nullptr)
+	//// 우선 무조건 제일 마지막에 추가하기
+	//if (pTail != nullptr)
+	//{
+	//	// 리스트에 노드가 있다.
+	//	pTail->pNext = pNode;
+	//	pTail = pNode;
+	//}
+	//else
+	//{
+	//	pHead = pNode;
+	//	pTail = pNode;
+	//}
+
+	// 실습 : 무조건 제일 앞에 추가하기
+}
+
+void List::Clear()
+{
+	// 모든 노드 삭제하기
+	while (pHead != nullptr)
 	{
-		// 리스트에 노드가 있다.
-		pTail->pNext = pNode;
-		pTail = pNode;
+		ListNode* pDelete = pHead;
+		pHead = pHead->pNext;
+		delete pDelete;
 	}
-	else
-	{
-		pHead = pNode;
-		pTail = pNode;
-	}
+	pTail = nullptr;
 }
 
 void List::Print()
