@@ -15,9 +15,9 @@ void List::Insert(int data, int index)
 	pNode->data = data;					// 데이터 복사
 	pNode->pNext = nullptr;				// 마지막이니까 pNext는 null
 
-	if (index < 0)
+	if (index <= 0)
 	{
-		// index가 음수면 무조건 맨 앞에 넣는다.
+		// index가 0보다 작거나 같으면 무조건 맨 앞에 넣는다.
 		if (pHead != nullptr)
 		{
 			// 헤드에 무언가가 들어있다. => 다른 노드가 이미 들어가 있다.
@@ -31,7 +31,7 @@ void List::Insert(int data, int index)
 			pTail = pNode;
 		}
 	}
-	else if (index <= length)
+	else if (index >= length)
 	{
 		// index가 length보다 크거나 같으면 무조건 맨 뒤에 넣는다.			
 		if (pTail != nullptr)
@@ -48,7 +48,20 @@ void List::Insert(int data, int index)
 	}
 	else
 	{
-		// 인덱스대로 넣는다.
+		// 인덱스로 받은 위치에 넣는다.
+
+		// pTarget과 pPrev 찾기
+		ListNode* pTarget = pHead;		// 끼워 넣을 위치에 있는 노드
+		ListNode* pPrev = nullptr;		// 끼워 넣을 위치 한칸 앞에 있는 노드
+		for (int i = 0; i < index ; i++)
+		{
+			pPrev = pTarget;
+			pTarget = pTarget->pNext;
+		}
+
+		// pPrev와 pTarget 사이에 끼워 넣기
+		pPrev->pNext = pNode;	// prev노드의 next를 새 노드로 설정한다.
+		pNode->pNext = pTarget;	// 새 노드의 next를 target노드로 설정한다.
 	}
 
 	length++;
