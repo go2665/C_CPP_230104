@@ -67,6 +67,46 @@ void List::Insert(int data, int index)
 	length++;
 }
 
+void List::RemoveTargetIndex(int index)
+{
+	// 특정 위치에 있는 노드를 지우기
+	ListNode* pTarget = pHead;
+	if (index <= 0)
+	{
+		// 무조건 맨 앞에 있는 노드 지우기
+		pHead = pHead->pNext;		
+	}
+	else if (index >= length)
+	{
+		// 무조건 맨 뒤에 있는 노드 지우기
+		ListNode* pPrev = nullptr;
+		while (pTarget != pTail)
+		{
+			pPrev = pTarget;
+			pTarget = pTarget->pNext;
+		}
+		pPrev->pNext = nullptr;
+		pTail = pPrev;
+	}
+	else
+	{
+		// 필요한 노드 찾기
+		ListNode* pPrev = nullptr;		// 지울 위치 한칸 앞에 있는 노드
+		for (int i = 0; i < index; i++)
+		{
+			pPrev = pTarget;
+			pTarget = pTarget->pNext;	// 지울 위치에 있는 노드로 찾아가기
+		}
+
+		// 노드 제거하기
+		pPrev->pNext = pTarget->pNext;	//이전 노드의 next를 지울 위치에 있는 노드의 next로 설정하기
+	}
+
+	delete pTarget;		// 실제로 노드 메모리 해제
+	pTarget = nullptr;
+	length--;			// 길이 줄이기
+}
+
 void List::Clear()
 {
 	// 모든 노드 삭제하기

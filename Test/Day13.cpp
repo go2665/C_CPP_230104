@@ -16,6 +16,21 @@ void TestDay13()
 	pList->Print();	// 20 15 10 5
 	pList->Insert(25, 0);
 	pList->Print();	// 25 20 15 10 5
+	pList->Insert(17, 2);
+	pList->Print();	// 25 20 17 15 10 5
+
+	pList->RemoveTargetIndex(2);
+	pList->Print();	// 25 20 15 10 5
+	pList->RemoveTargetIndex(2);
+	pList->Print();	// 25 20 10 5
+	pList->RemoveTargetIndex(1);
+	pList->Print();	// 25 10 5
+	pList->RemoveTargetIndex(0);
+	pList->Print();	// 10 5
+	pList->RemoveTargetIndex(1);
+	pList->Print();	// 10
+	pList->RemoveTargetIndex(5);
+	pList->Print(); // null
 
 	delete pList;
 }
