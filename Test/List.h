@@ -27,6 +27,14 @@ public:
 	/// </summary>
 	ListNode* pTail = nullptr;
 
+	/*const int FirstPos = -1;
+	const int LastPos = INT32_MAX;*/
+
+	/// <summary>
+	/// 리스트의 길이(절대로 음수가 될 수 없어야 하는 값이라 unsigned(부호없음)으로 변수 생성
+	/// </summary>
+	unsigned int length = 0;
+
 	/// <summary>
 	/// 리스트에 데이터를 추가하는 함수
 	/// </summary>

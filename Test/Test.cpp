@@ -23,8 +23,8 @@ int main()
     // Day09();
     // TestDay10();
     // TestDay11();
-
-    TestDay12();
+    // TestDay12();
+    TestDay13();
 }
 
 void Day08()
