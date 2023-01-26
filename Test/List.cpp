@@ -9,6 +9,10 @@ List::~List()
 	Clear();
 }
 
+// 클래스나 구조체의 맴버에 접근을 하기 위한 연산자.
+// .  : 클래스나 구조체 본체일 때
+// -> : 클래스나 구조체의 주소일 때
+
 void List::Insert(int data, int index)
 {
 	ListNode* pNode = new ListNode();	// 새 노드 만들고
