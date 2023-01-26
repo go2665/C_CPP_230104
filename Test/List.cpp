@@ -89,8 +89,19 @@ void List::RemoveTargetIndex(int index)
 			pPrev = pTarget;
 			pTarget = pTarget->pNext;
 		}
-		pPrev->pNext = nullptr;
-		pTail = pPrev;
+		if (pPrev == nullptr)
+		{
+			// pTarget이 head이자 tail이다 라는 것과 같은 의미
+			// pTarget이 head니까 pTarget의 앞은 존재할 수 없다.
+			pHead = nullptr;	// 리스트는 이제 비었으니까 머리와 꼬리를 전부 null로
+			pTail = nullptr;
+		}
+		else
+		{
+			// 리스트에 노드가 2개 이상 있는 상태에서 마지막 노드를 제거하는 상황
+			pPrev->pNext = nullptr;
+			pTail = pPrev;
+		}
 	}
 	else
 	{
@@ -102,8 +113,12 @@ void List::RemoveTargetIndex(int index)
 			pTarget = pTarget->pNext;	// 지울 위치에 있는 노드로 찾아가기
 		}
 
-		// 노드 제거하기
-		pPrev->pNext = pTarget->pNext;	//이전 노드의 next를 지울 위치에 있는 노드의 next로 설정하기
+		// 노드 링크 제거하기
+		pPrev->pNext = pTarget->pNext;	// 이전 노드의 next를 지울 위치에 있는 노드의 next로 설정하기
+		if (pPrev->pNext == nullptr)	// pNext가 없다는 것은 pPrev가 새로운 pTail이 되어야한다는 이야기
+		{
+			pTail = pPrev;	// 뒤가 없으면 새로운 꼬리로 설정
+		}
 	}
 
 	delete pTarget;		// 실제로 노드 메모리 해제
