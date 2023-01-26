@@ -126,6 +126,39 @@ void List::RemoveTargetIndex(int index)
 	length--;			// 길이 줄이기
 }
 
+bool List::RemoveTargetData(int data)
+{
+	// 리스트에서 data를 찾아서 
+	// 있으면 data들어있는 노드를 삭제하고 true를 리턴
+	// 없으면 false를 리턴
+	return false;
+}
+
+int List::FindPosition(int data)
+{
+	// 실습 : 함수 완성하기
+	// 시간 : 6시 5분까지
+	
+	// head부터 하나씩 data와 비교
+	int result = NOT_FOUND;			// 초기값으로 NOT_FOUND
+	ListNode* pNode = pHead;
+	/*while (pNode != pTail)
+	{
+		pNode = pNode->pNext;
+	}*/
+	for (int i = 0; i < length; i++)
+	{
+		if (pNode->data == data)	// pNode에 들어있는 데이터가 찾는 데이터와 같으면
+		{
+			result = i;				// 찾는 것을 중지하고 있는 위치를 result에 저장
+			break;
+		}
+		pNode = pNode->pNext;		// 아니면 다음 노드로 진행
+	}
+
+	return result;					// result 리턴
+}
+
 void List::Clear()
 {
 	// 모든 노드 삭제하기

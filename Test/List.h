@@ -44,12 +44,20 @@ public:
 	/// </summary>
 	/// <param name="index">제거할 위치</param>
 	void RemoveTargetIndex(int index);
-
+		
 	/// <summary>
 	/// 리스트에서 특정 값을 가진 노드를 제거하는 함수
 	/// </summary>
 	/// <param name="data">제거할 데이터</param>
-	void RemoveTargetData(int data);
+	/// <returns>삭제에 성공하면 true. 실패하면 false</returns>
+	bool RemoveTargetData(int data);
+
+	/// <summary>
+	/// 리스트에서 data가 있는 위치를 리턴
+	/// </summary>
+	/// <param name="data">찾을 데이터</param>
+	/// <returns>data가 있는 위치.없으면 NOT_FOUND 리턴 </returns>
+	int FindPosition(int data);
 
 	/// <summary>
 	/// 리스트에서 모든 노드를 제거할 함수
@@ -60,6 +68,9 @@ public:
 	/// 리스트를 출력하는 함수
 	/// </summary>
 	void Print();
+
+private:
+	const int NOT_FOUND = -1;
 };
 
 // 장점 : 데이터의 추가/삽입/삭제가 편리하다.
