@@ -128,10 +128,20 @@ void List::RemoveTargetIndex(int index)
 
 bool List::RemoveTargetData(int data)
 {
-	// 리스트에서 data를 찾아서 
-	// 있으면 data들어있는 노드를 삭제하고 true를 리턴
-	// 없으면 false를 리턴
-	return false;
+	bool result = false;
+	int index = FindPosition(data);	// data의 위치 찾기
+	if (index != NOT_FOUND)			// 있는지 없는지 확인
+	{
+		// data가 있다.
+		RemoveTargetIndex(index);
+		result = true;
+	}
+	//else		// 이미 시작할 때 result를 false로 했기 때문에 사용할 필요가 없다.
+	//{
+	//	// data가 없다.
+	//}
+
+	return result;
 }
 
 int List::FindPosition(int data)

@@ -25,6 +25,11 @@ void TestDay15()
 	cout << "25은 " << pList->FindPosition(25) << "번째 위치에 있습니다." << endl;
 	cout << "50은 " << pList->FindPosition(50) << "번째 위치에 있습니다." << endl;
 
+	pList->RemoveTargetData(20);
+	pList->Print();	// 25 17 15 10 5
+	pList->RemoveTargetData(20);
+	pList->Print();	// 25 17 15 10 5
+
 	//pList->RemoveTargetIndex(2);
 	//pList->Print();	// 25 20 15 10 5
 	//pList->RemoveTargetIndex(2);
