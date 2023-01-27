@@ -139,6 +139,7 @@
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="ListNode.cpp" />
+    <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="Wizard.cpp" />
@@ -156,6 +157,8 @@
     <ClInclude Include="Human.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="ListNode.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="QueueNode.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="Warrior.h" />
     <ClInclude Include="Wizard.h" />

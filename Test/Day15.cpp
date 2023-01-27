@@ -2,7 +2,20 @@
 
 void TestDay15()
 {
-	cout << "Day15 시작" << endl;
+	cout << "Day15 시작 : 큐 테스트" << endl;
+
+	Queue* pQueue = new Queue();
+
+	pQueue->Enqueue(10);
+
+	delete pQueue;
+	pQueue = nullptr;
+
+}
+
+void TestDay15_List()
+{
+	cout << "Day15 시작 : 리스트 테스트" << endl;
 
 	List* pList = new List;
 	pList->Print();
