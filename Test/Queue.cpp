@@ -41,6 +41,21 @@ int Queue::Dequeue()
 
 void Queue::Clear()
 {
+	// 코드 확인하고 Clear 완성하기(50분까지)
+	while (pFront != nullptr)
+	{
+		QueueNode* pDelete = pFront;
+		pFront = pFront->pNext;
+		delete pDelete;
+	}
+	pRear = nullptr;
+
+	// 데이터를 꺼내면서 특정 작업을 해야 할 경우
+	//while (pFront != nullptr)
+	//{
+	//	int data = Dequeue();
+	//	// data ~~~~~
+	//}
 }
 
 void Queue::Print()

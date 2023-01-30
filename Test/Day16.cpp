@@ -24,6 +24,13 @@ void TestDay16()
 
 	pQueue->Enqueue(40);
 	pQueue->Print();	// 40 | null
+	pQueue->Enqueue(50);
+	pQueue->Print();	// 40 | 50 | null
+	pQueue->Enqueue(60);
+	pQueue->Print();	// 40 | 50 | 60 | null
+	
+	pQueue->Clear();
+	pQueue->Print();	// null
 
 	delete pQueue;
 	pQueue = nullptr;
