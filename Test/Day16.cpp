@@ -2,6 +2,12 @@
 
 void TestDay16()
 {
+	//TestDay16_Queue();
+	TestDay16_CQ();
+}
+
+void TestDay16_Queue()
+{
 	cout << "Day16 시작 : 큐 테스트" << endl;
 
 	Queue* pQueue = new Queue();
@@ -35,4 +41,26 @@ void TestDay16()
 	delete pQueue;
 	pQueue = nullptr;
 
+}
+
+void TestDay16_CQ()
+{
+	CircularQueue* pQueue = new CircularQueue();
+
+	pQueue->Enqueue(10);
+	pQueue->Enqueue(20);
+	pQueue->Enqueue(30);
+	pQueue->Enqueue(40);
+	pQueue->Enqueue(50);
+	pQueue->Enqueue(60);
+	pQueue->Enqueue(70);
+	pQueue->Dequeue();
+	pQueue->Dequeue();
+	pQueue->Dequeue();
+	pQueue->Dequeue();
+	pQueue->Dequeue();
+	pQueue->Dequeue();
+
+	delete pQueue;
+	pQueue = nullptr;
 }

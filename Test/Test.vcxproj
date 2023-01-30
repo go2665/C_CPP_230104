@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CircularQueue.cpp" />
     <ClCompile Include="Day07.cpp" />
     <ClCompile Include="Day08.cpp" />
     <ClCompile Include="Day09.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="Wizard.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CircularQueue.h" />
     <ClInclude Include="Day07.h" />
     <ClInclude Include="Day08.h" />
     <ClInclude Include="Day09.h" />
