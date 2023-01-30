@@ -1,5 +1,8 @@
 #pragma once
+#include <iostream>
 #include "QueueNode.h"
+
+using namespace std;
 
 class Queue
 {
@@ -31,5 +34,7 @@ protected:	// 나와 나를 상속 받은 것들만 사용 가능
 private:	// 나만 사용 가능
 	QueueNode* pFront = nullptr;	// Front의 주소
 	QueueNode* pRear = nullptr;		// Rear의 주소
+
+	const int QUEUE_EMPTY = INT32_MIN;	// 큐가 비었을 때 Dequeue하면 리턴이 되는 값
 };
 
