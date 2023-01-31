@@ -27,7 +27,8 @@ int main()
     //TestDay13();
     //TestDay14();
     //TestDay15();
-    TestDay16();
+    //TestDay16();
+    TestDay17();
 }
 
 void Day08()
