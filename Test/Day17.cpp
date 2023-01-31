@@ -13,12 +13,19 @@ void TestDay17_Stack()
 	Stack* pStack = new Stack(5);
 
 	pStack->Push(10);
+	pStack->Print();
 	pStack->Push(20);
+	pStack->Print();
 	pStack->Push(30);
+	pStack->Print();
 	pStack->Push(40);
+	pStack->Print();
 	pStack->Push(50);
+	pStack->Print();
 	pStack->Push(60);
+	pStack->Print();
 	pStack->Push(70);
+	pStack->Print();
 
 	delete pStack;
 	pStack = nullptr;

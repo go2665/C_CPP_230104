@@ -25,9 +25,9 @@ public:
 	void Print();
 
 private:
-	int size = 0;
-	unsigned int* stack;
-	int top = STACK_IS_EMPTY;
+	int size = 0;				// 스택의 크기
+	unsigned int* stack;		// 스택의 데이터를 담는 배열
+	int top = STACK_IS_EMPTY;	// 제일 위에 있는 데이터의 위치
 
 	const unsigned int EMPTY = UINT32_MAX;
 	const int STACK_IS_EMPTY = -1;

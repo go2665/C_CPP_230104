@@ -32,4 +32,26 @@ void Stack::Clear()
 
 void Stack::Print()
 {
+	// [  ]
+	// [  ]
+	// [30] <- Top
+	// [20]
+	// [10]
+
+	// 빈칸 출력하기
+	int emptySize = size - top - 1;
+	for (int i = 0; i < emptySize; i++)
+	{
+		cout << " [    ] " << endl;
+	}
+
+	// top부분 출력하기
+	cout << " [ " << stack[top] << " ] <- Top" << endl;
+	
+	// top 아래쪽 출력하기
+	for (int i = top-1; i > -1; i--)
+	{
+		cout << " [ " << stack[i] << " ] " << endl;
+	}
+	cout << endl;
 }
