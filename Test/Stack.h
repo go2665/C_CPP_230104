@@ -8,7 +8,7 @@ public:
 	Stack(int stackSize)
 	{
 		size = stackSize;
-		top = 0;
+		top = STACK_IS_EMPTY;
 		stack = new unsigned int[size];
 		memset(stack, UINT32_MAX, sizeof(unsigned int) * size);
 	}
@@ -27,7 +27,9 @@ public:
 private:
 	int size = 0;
 	unsigned int* stack;
-	int top = 0;
+	int top = STACK_IS_EMPTY;
+
 	const unsigned int EMPTY = UINT32_MAX;
+	const int STACK_IS_EMPTY = -1;
 };
 
