@@ -143,6 +143,7 @@
     <ClCompile Include="List.cpp" />
     <ClCompile Include="ListNode.cpp" />
     <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="Wizard.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="QueueNode.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="Warrior.h" />
     <ClInclude Include="Wizard.h" />

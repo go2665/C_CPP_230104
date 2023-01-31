@@ -4,7 +4,18 @@ void TestDay17()
 {
 	//TestDay17_CQ();
 	//TestDay17_Print();
-	TestDay17_QueueDelete();
+	//TestDay17_QueueDelete();
+	TestDay17_Stack();
+}
+
+void TestDay17_Stack()
+{
+	Stack* pStack = new Stack(5);
+
+	int i = 0;
+
+	delete pStack;
+	pStack = nullptr;
 }
 
 void TestDay17_Print()
