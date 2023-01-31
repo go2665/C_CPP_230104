@@ -42,7 +42,8 @@ private:	// 나만 사용 가능
 	static const int Queue_Size = 6;	// 정적 상수. 모든 CircularQueue가 같은 값을 가진다.
 	int queue[Queue_Size];				// 정적 상수를 이용해 배열 즉시 생성.
 
-	const int EMPTY = INT32_MIN;
+	const int EMPTY = -999999999;
+	//const int EMPTY = INT32_MIN;
 
 	int front = 0;
 	int rear = 0;

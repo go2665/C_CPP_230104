@@ -7,7 +7,11 @@ using namespace std;
 class Queue
 {
 public:		// 모든 것들이 사용 가능
-	
+	~Queue()
+	{
+		Clear();	// 노드가 남아있는 상태에서 삭제했을 때를 대비
+	}
+
 	/// <summary>
 	/// 데이터 하나를 큐에 추가하는 함수
 	/// </summary>

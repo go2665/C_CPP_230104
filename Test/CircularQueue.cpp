@@ -26,8 +26,19 @@ int CircularQueue::Dequeue()
 
 void CircularQueue::Clear()
 {
+	front = 0;
+	rear = 0;
+	memset(queue, EMPTY, sizeof(int) * Queue_Size);
 }
 
 void CircularQueue::Print()
 {
+	// front에서 시작해서 rear가 될 때까지 for문 돌리기
+	cout << "서큘러 큐 출력하기" << endl;
+
+	for (int i = front; i != rear; i = (i + 1) % Queue_Size)
+	{
+		cout << queue[i] << " | ";
+	}
+	cout << "null" << endl;
 }
