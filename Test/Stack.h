@@ -8,8 +8,9 @@ public:
 	Stack(int stackSize)
 	{
 		size = stackSize;
-		top = STACK_IS_EMPTY;
 		stack = new unsigned int[size];
+
+		top = STACK_IS_EMPTY;
 		memset(stack, UINT32_MAX, sizeof(unsigned int) * size);
 	}
 	~Stack()

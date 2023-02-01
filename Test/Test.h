@@ -17,6 +17,7 @@
 #include "Day15.h"
 #include "Day16.h"
 #include "Day17.h"
+#include "Day18.h"
 
 enum RockPaperScissors
 {
